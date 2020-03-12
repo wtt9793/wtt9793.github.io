@@ -144,6 +144,104 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-js整理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/12/js%E6%95%B4%E7%90%86/">js整理</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/12/js%E6%95%B4%E7%90%86/" class="archive-article-date">
+  	<time datetime="2020-03-12T04:16:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>页面的性能指标详解：<br>白屏时间（first Paint Time）——用户从打开页面开始到页面开始有东西呈现为止</li>
+</ol>
+<p>首屏时间——用户浏览器首屏内所有内容都呈现出来所花费的时间</p>
+<p>用户可操作时间(dom Interactive)——用户可以进行正常的点击、输入等操作，默认可以统计domready时间，因为通常会在这时候绑定事件操作</p>
+<p>总下载时间——页面所有资源都加载完成并呈现出来所花的时间，即页面 onload 的时间</p>
+<p>白屏时间first paint 和可交互时间dom ready的关系是 没关系</p>
+<ol start="2">
+<li>•      给元素绑定样式 ng-style<br>•    给元素绑定类名  ng-class<br>•    eg:用法①：<div ng-class="{'A':isA,'B':isB,'C':isC}"></div> <pre><code>用法②：&lt;div   ng-class = &quot;{{A}}&quot; &gt; &lt;/ div &gt;  </code></pre>•    给元素绑定监听 ng-click等<br>•    显示隐藏   ng-show  ng-hide</li>
+</ol>
+<ol start="3">
+<li><p>length是数组的属性，不是方法，所以选length,而且length是不加括号的</p>
+</li>
+<li><p>如果参数的小数部分等于0.5，则舍入到下一个在正无穷方向上的整数（round函数）</p>
+</li>
+</ol>
+<p>所以该题Math.round(11.5)=12,Math.round(-11.5)=-11,两者相加为1；<br>5.    以下代码的执行后，str 的值是：<br>var str = “Hellllo world”;<br>str = str.replace(/(l)\1/g, ‘$1’);<br>对于正则表达式 /(l)\1/g，其中(l)是第一个分组，\1指向第一个分组，即\1重复了第一个分组的内容，所以该正则表达式可以表示成/(ll)/g<br>而对于第二个参数$1，表示用第一个分组的内容 l 对匹配到的部分进行替换(即 ll 替换成 l )，同时正则表达式有g表示全局匹配，所以4个ll被替换成2个ll。</p>
+<ol start="6">
+<li><p>Math.ceil(); ceiling（天花板） 所以向上取整<br>Math.floor();floor（地板）所以向下取整<br>1</p>
+</li>
+<li><p>pop（）方法用于删除数组的最后一个元素，并返回被删除的最后一个元素，这样的话数组就被改变了。1<br>splice()方法可以对数组中已经存在元素进行删除，也可以添加元素到数组中。<br>sort()方法1对数组中所有的元素都进行排序，如果没有提供比较函数compareFunction，则按照字符串的Unicode码的顺序进行排序。<br>所以以上三种方法都改变了数组。<br>而  concat()方法用于连接两个或多个数组。该方法不会改变现有的数组，而仅仅会返回被连接数组的一个副本，返回一个新的数组。该数组是通过把所有的arrayX参数添加到arryaObject中生成的，如果要进行 concat()操作的参数是数组，那么添加的是数组中的元素，而不是数组。</p>
+</li>
+<li><p>知识点一:js函数调用时加括号和不加括号的区别.不加括号相当于把函数代码赋给等号左边,加括号是把函数返回值赋给等号左边.参考<a href="https://www.zhihu.com/question/31044040" target="_blank" rel="noopener">https://www.zhihu.com/question/31044040</a><br>知识点二:js中this的用法,this总是指向调用它的对象,倒数第二行的getColor为windows调用的,倒数第一行的getColor是test4399对象调用的.参考<a href="http://www.cnblogs.com/painsOnline/p/5102359.html" target="_blank" rel="noopener">http://www.cnblogs.com/painsOnline/p/5102359.html</a></p>
+</li>
+</ol>
+<ol start="9">
+<li><p>undefined和null与任何有意义的值比较返回的都是false，但是null与undefined之间互相比较返回的是true。</p>
+</li>
+<li><p>(function() {<br>var x=foo();<br>var foo=function foo() {<br> return “foobar”<br>};<br>return x;<br>})();<br>var x = foo();<br>var foo=function foo() {…}<br>语句中变量的声明会提升，但是定义不会提升。以上代码等同于：<br>var foo;<br>var x = foo();<br>foo = function foo() {…}<br>当执行到 x = foo() 时，由于foo未被定义为函数，所以会返回<br>TypeError: foo is not a function</p>
+</li>
+<li><p>基本数据类型：Number，String，Boolean，Undefined，Null<br>复杂数据类型：Object，Array，Function，RegExp，Date，Error<br>全局数据类型：Math</p>
+</li>
+</ol>
+<ol start="12">
+<li>Math.max(args…)传入参数是任意数量的值</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/12/js%E6%95%B4%E7%90%86/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-我的第一篇文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

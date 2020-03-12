@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/3 | WTT&#39;S Blog</title>
+  <title>js整理 | WTT&#39;S Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="WTT&#39;S Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2020/03/index.html">
+  <meta name="description" content="页面的性能指标详解：白屏时间（first Paint Time）——用户从打开页面开始到页面开始有东西呈现为止  首屏时间——用户浏览器首屏内所有内容都呈现出来所花费的时间 用户可操作时间(dom Interactive)——用户可以进行正常的点击、输入等操作，默认可以统计domready时间，因为通常会在这时候绑定事件操作 总下载时间——页面所有资源都加载完成并呈现出来所花的时间，即页面 on">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js整理">
+<meta property="og:url" content="http://yoursite.com/2020/03/12/js%E6%95%B4%E7%90%86/index.html">
 <meta property="og:site_name" content="WTT&#39;S Blog">
+<meta property="og:description" content="页面的性能指标详解：白屏时间（first Paint Time）——用户从打开页面开始到页面开始有东西呈现为止  首屏时间——用户浏览器首屏内所有内容都呈现出来所花费的时间 用户可操作时间(dom Interactive)——用户可以进行正常的点击、输入等操作，默认可以统计domready时间，因为通常会在这时候绑定事件操作 总下载时间——页面所有资源都加载完成并呈现出来所花的时间，即页面 on">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-12T04:16:23.000Z">
+<meta property="article:modified_time" content="2020-03-12T04:12:04.206Z">
 <meta property="article:author" content="WTT">
 <meta name="twitter:card" content="summary">
   
@@ -142,103 +146,201 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-js整理" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      js整理
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/12/js%E6%95%B4%E7%90%86/" class="archive-article-date">
+
+        
+        <a href="/2020/03/12/js%E6%95%B4%E7%90%86/" class="archive-article-date">
   	<time datetime="2020-03-12T04:16:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-12</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/12/js%E6%95%B4%E7%90%86/">js整理</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>页面的性能指标详解：<br>白屏时间（first Paint Time）——用户从打开页面开始到页面开始有东西呈现为止</li>
+</ol>
+<p>首屏时间——用户浏览器首屏内所有内容都呈现出来所花费的时间</p>
+<p>用户可操作时间(dom Interactive)——用户可以进行正常的点击、输入等操作，默认可以统计domready时间，因为通常会在这时候绑定事件操作</p>
+<p>总下载时间——页面所有资源都加载完成并呈现出来所花的时间，即页面 onload 的时间</p>
+<p>白屏时间first paint 和可交互时间dom ready的关系是 没关系</p>
+<ol start="2">
+<li>•      给元素绑定样式 ng-style<br>•    给元素绑定类名  ng-class<br>•    eg:用法①：<div ng-class="{'A':isA,'B':isB,'C':isC}"></div> <pre><code>用法②：&lt;div   ng-class = &quot;{{A}}&quot; &gt; &lt;/ div &gt;  </code></pre>•    给元素绑定监听 ng-click等<br>•    显示隐藏   ng-show  ng-hide</li>
+</ol>
+<ol start="3">
+<li><p>length是数组的属性，不是方法，所以选length,而且length是不加括号的</p>
+</li>
+<li><p>如果参数的小数部分等于0.5，则舍入到下一个在正无穷方向上的整数（round函数）</p>
+</li>
+</ol>
+<p>所以该题Math.round(11.5)=12,Math.round(-11.5)=-11,两者相加为1；<br>5.    以下代码的执行后，str 的值是：<br>var str = “Hellllo world”;<br>str = str.replace(/(l)\1/g, ‘$1’);<br>对于正则表达式 /(l)\1/g，其中(l)是第一个分组，\1指向第一个分组，即\1重复了第一个分组的内容，所以该正则表达式可以表示成/(ll)/g<br>而对于第二个参数$1，表示用第一个分组的内容 l 对匹配到的部分进行替换(即 ll 替换成 l )，同时正则表达式有g表示全局匹配，所以4个ll被替换成2个ll。</p>
+<ol start="6">
+<li><p>Math.ceil(); ceiling（天花板） 所以向上取整<br>Math.floor();floor（地板）所以向下取整<br>1</p>
+</li>
+<li><p>pop（）方法用于删除数组的最后一个元素，并返回被删除的最后一个元素，这样的话数组就被改变了。1<br>splice()方法可以对数组中已经存在元素进行删除，也可以添加元素到数组中。<br>sort()方法1对数组中所有的元素都进行排序，如果没有提供比较函数compareFunction，则按照字符串的Unicode码的顺序进行排序。<br>所以以上三种方法都改变了数组。<br>而  concat()方法用于连接两个或多个数组。该方法不会改变现有的数组，而仅仅会返回被连接数组的一个副本，返回一个新的数组。该数组是通过把所有的arrayX参数添加到arryaObject中生成的，如果要进行 concat()操作的参数是数组，那么添加的是数组中的元素，而不是数组。</p>
+</li>
+<li><p>知识点一:js函数调用时加括号和不加括号的区别.不加括号相当于把函数代码赋给等号左边,加括号是把函数返回值赋给等号左边.参考<a href="https://www.zhihu.com/question/31044040" target="_blank" rel="noopener">https://www.zhihu.com/question/31044040</a><br>知识点二:js中this的用法,this总是指向调用它的对象,倒数第二行的getColor为windows调用的,倒数第一行的getColor是test4399对象调用的.参考<a href="http://www.cnblogs.com/painsOnline/p/5102359.html" target="_blank" rel="noopener">http://www.cnblogs.com/painsOnline/p/5102359.html</a></p>
+</li>
+</ol>
+<ol start="9">
+<li><p>undefined和null与任何有意义的值比较返回的都是false，但是null与undefined之间互相比较返回的是true。</p>
+</li>
+<li><p>(function() {<br>var x=foo();<br>var foo=function foo() {<br> return “foobar”<br>};<br>return x;<br>})();<br>var x = foo();<br>var foo=function foo() {…}<br>语句中变量的声明会提升，但是定义不会提升。以上代码等同于：<br>var foo;<br>var x = foo();<br>foo = function foo() {…}<br>当执行到 x = foo() 时，由于foo未被定义为函数，所以会返回<br>TypeError: foo is not a function</p>
+</li>
+<li><p>基本数据类型：Number，String，Boolean，Undefined，Null<br>复杂数据类型：Object，Array，Function，RegExp，Date，Error<br>全局数据类型：Math</p>
+</li>
+</ol>
+<ol start="12">
+<li>Math.max(args…)传入参数是任意数量的值</li>
+</ol>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/12/js%E6%95%B4%E7%90%86/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-03-11T14:16:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-11</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我的第一篇文章</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/">我的第一篇文章</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/11/hello-world/" class="archive-article-date">
-  	<time datetime="2020-03-11T14:06:05.003Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/11/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -261,8 +363,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
